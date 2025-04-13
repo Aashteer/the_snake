@@ -41,7 +41,7 @@ clock = pygame.time.Clock()
 
 class GameObject:
     """Базовый класс для игровых объектов."""
-    
+
     def __init__(self, position: Tuple[int, int] = None) -> None:
         if position is None:
             position = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
@@ -55,7 +55,7 @@ class GameObject:
 
 class Apple(GameObject):
     """Класс яблока для игры."""
-    
+
     def __init__(self) -> None:
         super().__init__()
         self.body_color = APPLE_COLOR
@@ -65,7 +65,7 @@ class Apple(GameObject):
             self,
             snake_positions: List[Tuple[int, int]] = None
     ) -> None:
-        """Рандомизировать позицию яблока, чтобы оно не появилось на теле змейки."""
+        """Рандомизировать позицию яблока, чтобы оно не появилось на змейки."""
         if snake_positions is None:
             snake_positions = []
 
@@ -86,7 +86,7 @@ class Apple(GameObject):
 
 class Snake(GameObject):
     """Класс змейки, управляющей игровым процессом."""
-    
+
     def __init__(self) -> None:
         super().__init__()
         self.body_color = SNAKE_COLOR
